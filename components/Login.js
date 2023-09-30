@@ -1,12 +1,21 @@
 import React from 'react';
-import { View, StyleSheet, Text, TextInput, Button, SafeAreaView, Image } from 'react-native';
+import { View, StyleSheet, Text, TextInput, Button, Image } from 'react-native';
 import Svg, { Defs, Rect, LinearGradient, Stop } from 'react-native-svg';
+import {
+    SafeAreaView,
+    SafeAreaProvider,
+    SafeAreaInsetsContext,
+    useSafeAreaInsets,
+  }from 'react-native-safe-area-context';
+
+
 
 const FROM_COLOR = 'rgba(247, 247, 247, 1)';
 const TO_COLOR = 'rgba(45, 40, 122, 1)';
 
-const Background = ({ children }) => {
+const Login = ({ children }) => {
     return (
+        
         <SafeAreaView style={styles.container}>
             
             <View style={styles.gradientContainer}>
@@ -20,22 +29,26 @@ const Background = ({ children }) => {
                     <Rect width="100%" height="100%" fill="url(#grad)" />
                 </Svg>
             </View>
-
+            
             <View style={styles.contentContainer}>
+            <View>
                 <Image
                     style={styles.logo}
                     source={require('../src/img/Logo1-sfondo.png')}
                     
                 />
+            </View>
+          
 
-                <TextInput style={styles.textInput} placeholder="Enter Your User Name" />
-                <TextInput style={styles.textInput} placeholder="Enter Your Email" />
-                <TextInput style={styles.textInput} keyboardType="phone-pad"  placeholder="Enter Your Phone Number" />
+                <Text style={styles.text}>Login</Text>
+                <Text style={styles.text}>Welcome Back</Text>
+
+                <TextInput style={styles.textInput} placeholder="Enter Your Username/Email" />            
                 <TextInput style={styles.textInput} placeholder="Enter Your Password" />
 
                 <View style={styles.buttonContainer}>
                     <Button
-                        title="Sign Up"
+                        title="Login"
                         color="#0e64d1"
                         onPress={() => {
                             // manejo boton
@@ -43,7 +56,8 @@ const Background = ({ children }) => {
                     />
                 </View>
 
-                <Text style={styles.text}>Already Have An Account? Login</Text>
+                <Text style={styles.text2}>Already Have An Account? Login</Text>
+                
             </View>
 
             {children}
@@ -72,7 +86,8 @@ const styles = StyleSheet.create({
     logo: {
         width: 400,
         height: 80,
-        marginBottom: 100,
+        marginTop:-150,
+        marginBottom:30
     },
     textInput: {
         borderWidth: 2,
@@ -92,9 +107,15 @@ const styles = StyleSheet.create({
         
     },
     text: {
-        color: 'white',
-        marginTop: 10,
+        color: '#000',
+        fontSize:20,
+        lineHeight:35,        
+
     },
+    text2:{
+        color: 'white',
+        marginTop: 10,        
+    }
 });
 
-export default Background;
+export default Login;

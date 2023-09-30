@@ -2,12 +2,13 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import Background from './components/background';
+import Login from './components/Login';
 
 export default function App() {
   return (
-    <Background>
+    <Login>
       
-    </Background>
+    </Login>
   );
 }
 
