@@ -9,6 +9,8 @@ import { firebaseConfig } from '../firebase-config';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { useNavigation } from '@react-navigation/native';
+import { _singInWithGoogle } from '../config/firebase/GoogleSingIn';
+
 
 const FROM_COLOR = 'rgba(247, 247, 247, 1)';
 const TO_COLOR = 'rgba(45, 40, 122, 1)';
@@ -48,6 +50,16 @@ const Login = ({ children }) => {
         })
     }
 
+    async function googleSignIn(){
+        _singInWithGoogle().then(data => {
+            if(!data){
+                console.log('=> Error no data')
+                return 
+            }
+            console.log('=> success', data)
+        })
+    }   
+
     return (
         <SafeAreaView style={styles.container}>
             
@@ -84,6 +96,13 @@ const Login = ({ children }) => {
                         color="#0e64d1"
                         onPress={handleCreateAccount}
                     />
+                    <View style={styles.google}>
+                    <Button
+                        title="Sign in with google"
+                        color="#0e64d1"
+                        onPress={()=>googleSignIn()}
+                    />
+                    </View>
                 </View>
             </View>
 
@@ -135,6 +154,8 @@ const styles = StyleSheet.create({
     text: {
         color: 'white',
         marginTop: 10,
+    },google: {
+        marginTop: 10
     },
 });
 
