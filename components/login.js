@@ -65,6 +65,7 @@ const Login = ({ children }) => {
      async function signOut () {
         try {
             await GoogleSignin.signOut();
+            navigation.navigate('Login')
             //setState({ user: null }); // Remember to remove the user from your app's state as well
           } catch (error) {
             console.error(error);
@@ -102,11 +103,13 @@ const Login = ({ children }) => {
                         color="#0e64d1"
                         onPress={handleSignIn}
                     />
+                    <View style={styles.google}>
                     <Button
                         title="Crear Cuenta"
                         color="#0e64d1"
                         onPress={handleCreateAccount}
                     />
+                    </View>
                     <View style={styles.google}>
                     <Button
                         title="Sign in with google"
@@ -172,7 +175,8 @@ const styles = StyleSheet.create({
     text: {
         color: 'white',
         marginTop: 10,
-    },google: {
+    },
+    google: {
         marginTop: 10
     },
 });

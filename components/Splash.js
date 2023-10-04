@@ -1,15 +1,18 @@
 import { View, Text, ImageBackground } from 'react-native'
 import React from 'react'
+import { useNavigation } from '@react-navigation/native';
 
-export default function Splash({navigation,children}) {
+export default function Splash({children}) {
+
+  const navigation = useNavigation();
+
     setTimeout(()=>{
-        navigation.navigate('login')
+        navigation.navigate('Login')
       },5000)      
   return ( <>
     <ImageBackground source={require('../src/img/splash.png')}
-    resizeMode='cover'
-    style={{flex:1, padding: 20}}>
-    </ImageBackground>
+    resizeMode='contain'
+    style={{flex: 1}}/>
     {children}
     </>
   )
