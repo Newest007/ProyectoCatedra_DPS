@@ -6,12 +6,11 @@ import {getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, sig
 import {initializeApp} from 'firebase/app';
 import { firebaseConfig } from '../firebase-config';
 
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+//import { NavigationContainer } from '@react-navigation/native';
+//import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { useNavigation } from '@react-navigation/native';
 import { _singInWithGoogle } from '../config/firebase/GoogleSingIn';
 import { GoogleSignin } from "@react-native-google-signin/google-signin";
-
 
 const FROM_COLOR = 'rgba(247, 247, 247, 1)';
 const TO_COLOR = 'rgba(45, 40, 122, 1)';

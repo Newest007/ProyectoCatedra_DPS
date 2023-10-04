@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, StatusBar, Button } from 'react-native';
-import Background from './components/background';
+import Background from './components/registro';
 import Login from './components/login';
 import Splash from './components/Splash';
 import { NavigationContainer } from '@react-navigation/native';
