@@ -2,7 +2,7 @@ import React from 'react';
 import { View, StyleSheet, Text, TextInput, Button, SafeAreaView, Image, Alert } from 'react-native';
 import Svg, { Defs, Rect, LinearGradient, Stop } from 'react-native-svg';
 
-import {getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword} from 'firebase/auth';
+import {getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut} from 'firebase/auth';
 import {initializeApp} from 'firebase/app';
 import { firebaseConfig } from '../firebase-config';
 
@@ -10,6 +10,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { useNavigation } from '@react-navigation/native';
 import { _singInWithGoogle } from '../config/firebase/GoogleSingIn';
+import { GoogleSignin } from "@react-native-google-signin/google-signin";
 
 
 const FROM_COLOR = 'rgba(247, 247, 247, 1)';
@@ -57,8 +58,18 @@ const Login = ({ children }) => {
                 return 
             }
             console.log('=> success', data)
+            navigation.navigate('Home')
         })
-    }   
+    }
+    
+     async function signOut () {
+        try {
+            await GoogleSignin.signOut();
+            //setState({ user: null }); // Remember to remove the user from your app's state as well
+          } catch (error) {
+            console.error(error);
+          }
+      };
 
     return (
         <SafeAreaView style={styles.container}>
@@ -101,6 +112,13 @@ const Login = ({ children }) => {
                         title="Sign in with google"
                         color="#0e64d1"
                         onPress={()=>googleSignIn()}
+                    />
+                    </View>
+                    <View style={styles.google}>
+                    <Button
+                        title="Sign out"
+                        color="#0e64d1"
+                        onPress={()=>signOut()}
                     />
                     </View>
                 </View>
