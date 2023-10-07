@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, StyleSheet, Image, Text, ScrollView, Modal,Button,TouchableHighlight, SafeAreaView } from "react-native";
+import { View, StyleSheet, Image, Text, ScrollView, Modal,Button,TouchableHighlight, SafeAreaView, TextInput } from "react-native";
 
 const Inicio = () => {
 
@@ -27,12 +27,31 @@ const Inicio = () => {
 
 
 
-        <View style={{flexDirection:'row'}}>
-            <Image
-                style={styles.banner}
-                source={require('../src/img2/bg.jpg')}
+        <View style={{width:430, height: 150, backgroundColor:'#cdcbf0',}}>
+            <Text style={{ fontSize: 20, textAlign: 'center', alignItems: 'center', marginTop:10 }}>
+                Hola.. Adonde deseas viajar
+            </Text>
+            <TextInput
+            style={{
+                textAlign: 'center',
+                alignSelf: 'center',
+                fontSize: 15,
+                marginTop:20,
+                marginLeft: 2,
+                color: 'black',
+                backgroundColor: '#f3f3f3',
+                padding: 10,
+                borderRadius:18,
+                width:350
+            }}
+            placeholder="Selecciona tu destino"
             />
+
+
         </View>
+
+
+
         <View style={styles.contenedor}>
             <Text style={styles.titulo}>¿Que hacer en El Salvador?</Text>
             <ScrollView horizontal>
@@ -40,32 +59,32 @@ const Inicio = () => {
                     <TouchableHighlight onPress={()=>{SetModalVisibleplaya(!modalVisibleplaya)}}>
                         <Image
                             style={styles.ciudad}
-                            source={require('../src/img2/actividad1.jpg')}
+                            source={require('../src/img/test/actividad1.jpg')}
                         />
                     </TouchableHighlight>
                 </View>
                 <View>
                     <Image
                         style={styles.ciudad}
-                        source={require('../src/img2/actividad2.jpg')}
+                        source={require('../src/img/test/actividad2.jpg')}
                     />
                 </View>
                 <View>
                     <Image
                         style={styles.ciudad}
-                        source={require('../src/img2/actividad3.jpg')}
+                        source={require('../src/img/test/actividad3.jpg')}
                     />
                 </View>
                 <View>
                     <Image
                         style={styles.ciudad}
-                        source={require('../src/img2/actividad4.jpg')}
+                        source={require('../src/img/test/actividad4.jpg')}
                     />
                 </View>
                 <View>
                     <Image
                         style={styles.ciudad}
-                        source={require('../src/img2/actividad5.jpg')}
+                        source={require('../src/img/test/actividad5.jpg')}
                     />
                 </View>
             </ScrollView>
@@ -75,19 +94,19 @@ const Inicio = () => {
                 <View>
                     <Image
                         style={styles.mejores}
-                        source={require('../src/img2/mejores1.jpg')}
+                        source={require('../src/img/test/mejores1.jpg')}
                     />
                 </View>
                 <View>
                     <Image
                         style={styles.mejores}
-                        source={require('../src/img2/mejores2.jpg')}
+                        source={require('../src/img/test/mejores2.jpg')}
                     />
                 </View>
                 <View>
                     <Image
                         style={styles.mejores}
-                        source={require('../src/img2/mejores3.jpg')}
+                        source={require('../src/img/test/mejores3.jpg')}
                     />
                 </View>
 
@@ -96,25 +115,25 @@ const Inicio = () => {
                     <View style={styles.listaItem}>
                         <Image
                         style={styles.mejores}
-                        source={require('../src/img2/ruta1.jpg')}
+                        source={require('../src/img/test/ruta1.jpg')}
                         />
                     </View>
                     <View style={styles.listaItem}>
                         <Image
                         style={styles.mejores}
-                        source={require('../src/img2/ruta2.jpg')}
+                        source={require('../src/img/test/ruta2.jpg')}
                         />
                     </View>
                     <View style={styles.listaItem}>
                         <Image
                         style={styles.mejores}
-                        source={require('../src/img2/ruta3.jpg')}
+                        source={require('../src/img/test/ruta3.jpg')}
                         />
                     </View>
                     <View style={styles.listaItem}>
                         <Image
                         style={styles.mejores}
-                        source={require('../src/img2/ruta4.jpg')}
+                        source={require('../src/img/test/ruta4.jpg')}
                         />
                     </View>
                 </View>
