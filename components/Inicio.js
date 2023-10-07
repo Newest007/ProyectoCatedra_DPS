@@ -53,6 +53,35 @@ const Inicio = () => {
 
 
         <View style={styles.contenedor}>
+
+        <Text style={styles.tituloini}>Vuelos en promocion       <Text style={{fontSize:15, textDecorationLine:'underline', color:'blue'}}>Mas Promociones</Text></Text>
+                <View style={styles.listado}>
+                    
+                    <View style={styles.listaItem}>
+                        <Image
+                        style={styles.imgini}
+                        source={require('../src/img/ny.jpg')}
+                        />
+                    </View>
+                    <View style={styles.listaItem}>
+                        <Image
+                        style={styles.imgini}
+                        source={require('../src/img/lima.jpg')}
+                        />
+                    </View>
+                    <View style={styles.listaItem}>
+                        <Image
+                        style={styles.imgini}
+                        source={require('../src/img/los-angeles.jpg')}
+                        />
+                    </View>
+                    <View style={styles.listaItem}>
+                        <Image
+                        style={styles.imgini}
+                        source={require('../src/img/rio-j.jpg')}
+                        />
+                    </View>
+                </View>
             <Text style={styles.titulo}>¿Que hacer en El Salvador?</Text>
             <ScrollView horizontal>
                 <View>
@@ -88,58 +117,7 @@ const Inicio = () => {
                     />
                 </View>
             </ScrollView>
-
-            <Text style={styles.titulo}>Platillos Salvadoreños</Text>
-            <View>
-                <View>
-                    <Image
-                        style={styles.mejores}
-                        source={require('../src/img/test/mejores1.jpg')}
-                    />
-                </View>
-                <View>
-                    <Image
-                        style={styles.mejores}
-                        source={require('../src/img/test/mejores2.jpg')}
-                    />
-                </View>
-                <View>
-                    <Image
-                        style={styles.mejores}
-                        source={require('../src/img/test/mejores3.jpg')}
-                    />
-                </View>
-
-                <Text style={styles.titulo}>Rutas Turisticas</Text>
-                <View style={styles.listado}>
-                    <View style={styles.listaItem}>
-                        <Image
-                        style={styles.mejores}
-                        source={require('../src/img/test/ruta1.jpg')}
-                        />
-                    </View>
-                    <View style={styles.listaItem}>
-                        <Image
-                        style={styles.mejores}
-                        source={require('../src/img/test/ruta2.jpg')}
-                        />
-                    </View>
-                    <View style={styles.listaItem}>
-                        <Image
-                        style={styles.mejores}
-                        source={require('../src/img/test/ruta3.jpg')}
-                        />
-                    </View>
-                    <View style={styles.listaItem}>
-                        <Image
-                        style={styles.mejores}
-                        source={require('../src/img/test/ruta4.jpg')}
-                        />
-                    </View>
-                </View>
-
-            </View>
-            
+                    
 
         </View>    
     </ScrollView>
@@ -159,6 +137,7 @@ const styles=StyleSheet.create({
     },
     contenedor:{
         marginHorizontal:10,
+        marginBottom:10
     },
     titulo:{
         fontWeight: 'bold',
@@ -173,15 +152,35 @@ const styles=StyleSheet.create({
     mejores:{
         width:'100%',
         height:200,
-        marginVertical:5
+        marginVertical:5,
+        
     },
+
+    //Imagenes de inicio
+    imgini:{
+        width:'100%',
+        height:250,
+        marginVertical:5,
+        borderRadius:15
+    },
+    tituloini:{
+        fontWeight: 'bold',
+        fontSize:20,
+        marginVertical:10
+    },
+
+    //
+    
     listaItem:{
-        flexBasis:'49%',
+        flexBasis:'48%',
+        
     },
     listado:{
         flexDirection:'row',
         flexWrap:'wrap',
-        justifyContent:'space-between'
+        justifyContent:'space-between',
+        marginLeft:2,
+        marginRight:2
     },
     vistaModal:{
         flex:1,
