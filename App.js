@@ -1,119 +1,35 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, StatusBar, Button } from 'react-native';
+import Registro from './components/registro';
 import Login from './components/login';
-import Inicio from './components/Inicio';
-import Search from './components/search';
-
-//Para react navigation bottom
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import Splash from './components/Splash';
 import { NavigationContainer } from '@react-navigation/native';
-import FontAwesomeIcons from 'react-native-vector-icons/FontAwesome';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+//import { useNavigation } from '@react-navigation/native';
 
 
-export default function App() {
-
-  const Tab = createBottomTabNavigator();
-
-  
-
-  function HomeScreen() {
-    return (
-      <Inicio/>
-    );
-  }
-  
-  function SettingsScreen() {
-    return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Text>Settings!</Text>
-      </View>
-    );
-  }
-
-  // function Search() {
-  //   return (
-  //     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-  //       <Text>Search</Text>
-  //     </View>
-  //   );
-  // }
-
-  function Account() {
-    return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Text>Account</Text>
-      </View>
-    );
-  }
-
-  
-  function MyTabs() {
-    return (
-      <Tab.Navigator
-        screenOptions={{
-          tabBarStyle: { backgroundColor: '#2c278d', borderRadius: 5, },
-          tabBarActiveTintColor: '#ffffff',
-          tabBarInactiveTintColor: '#9f9ea7',
-        }}
-      >
-
-        
-          <Tab.Screen 
-            name="Inicio" 
-            component={HomeScreen}
-            options={{
-              tabBarIcon: ({ color, size }) => (
-                                
-                  <FontAwesomeIcons name="home" color={color} size={size} />
-                
-              ),
-            }}
-          />
+const Stack = createNativeStackNavigator();
 
 
-       <Tab.Screen name="Buscar" component={Search} 
-          options={{
-            tabBarIcon: ({ color, size }) => (
-              <FontAwesomeIcons name="search" color={color} size={size} />
-            ),
-          }}
-        />
-
-        <Tab.Screen name="Ajustes" component={SettingsScreen} 
-          options={{
-            tabBarIcon: ({ color, size }) => (
-              <FontAwesomeIcons name="cog" color={color} size={size} />
-            ),
-          }}
-        />
-
-        <Tab.Screen name="Cuenta" component={Account} 
-          options={{
-            tabBarIcon: ({ color, size }) => (
-              <FontAwesomeIcons name="user-o" color={color} size={size} />
-            ),
-          }}
-        />
-       
-      </Tab.Navigator>
-    );
-  }
-
-  return (
-
-    <NavigationContainer>
-      <MyTabs/>
-    </NavigationContainer>
-
+function HomeScreen(){
+  return(
+    <View>
+      <Text>Pantalla Principal</Text>
+    </View>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default function App() {
+  return (
+  <>
+    <NavigationContainer initialRouteName="Splash">
+      <Stack.Navigator>
+        <Stack.Screen name={'Splash'} component={Splash}  options={{headerShown: false}}/>
+        <Stack.Screen name="Login" component={Login} options={{headerShown: false}}/>
+        <Stack.Screen name="Home" component={HomeScreen} /*options={{headerShown: false}}*//>
+        <Stack.Screen name="Registro" component={Registro} /*options={{headerShown: false}}*//>
+      </Stack.Navigator>
+    </NavigationContainer>
+  </>
+  );
+}
