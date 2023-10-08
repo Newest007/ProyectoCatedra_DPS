@@ -2,13 +2,15 @@ import React from 'react';
 import { View, StyleSheet, Text, TextInput, Button, SafeAreaView, Image, Alert } from 'react-native';
 import Svg, { Defs, Rect, LinearGradient, Stop } from 'react-native-svg';
 
-import {getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword} from 'firebase/auth';
+import {getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut} from 'firebase/auth';
 import {initializeApp} from 'firebase/app';
 import { firebaseConfig } from '../firebase-config';
 
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+//import { NavigationContainer } from '@react-navigation/native';
+//import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { useNavigation } from '@react-navigation/native';
+import { _singInWithGoogle } from '../config/firebase/GoogleSingIn';
+import { GoogleSignin } from "@react-native-google-signin/google-signin";
 
 const FROM_COLOR = 'rgba(247, 247, 247, 1)';
 const TO_COLOR = 'rgba(45, 40, 122, 1)';
@@ -48,6 +50,27 @@ const Login = ({ children }) => {
         })
     }
 
+    async function googleSignIn(){
+        _singInWithGoogle().then(data => {
+            if(!data){
+                console.log('=> Error no data')
+                return 
+            }
+            console.log('=> success', data)
+            navigation.navigate('Home')
+        })
+    }
+    
+     async function signOut () {
+        try {
+            await GoogleSignin.signOut();
+            navigation.navigate('Login')
+            //setState({ user: null }); // Remember to remove the user from your app's state as well
+          } catch (error) {
+            console.error(error);
+          }
+      };
+
     return (
         <SafeAreaView style={styles.container}>
             
@@ -75,15 +98,31 @@ const Login = ({ children }) => {
 
                 <View style={styles.buttonContainer}>
                     <Button
-                        title="login"
+                        title="Iniciar Sesion"
                         color="#0e64d1"
                         onPress={handleSignIn}
                     />
+                    <View style={styles.google}>
                     <Button
                         title="Crear Cuenta"
                         color="#0e64d1"
                         onPress={handleCreateAccount}
                     />
+                    </View>
+                    <View style={styles.google}>
+                    <Button
+                        title="Sign in with google"
+                        color="#0e64d1"
+                        onPress={()=>googleSignIn()}
+                    />
+                    </View>
+                    <View style={styles.google}>
+                    <Button
+                        title="Sign out"
+                        color="#0e64d1"
+                        onPress={()=>signOut()}
+                    />
+                    </View>
                 </View>
             </View>
 
@@ -135,6 +174,9 @@ const styles = StyleSheet.create({
     text: {
         color: 'white',
         marginTop: 10,
+    },
+    google: {
+        marginTop: 10
     },
 });
 
