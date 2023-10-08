@@ -1,8 +1,9 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import Login from './components/Login';
+import Login from './components/login';
 import Inicio from './components/Inicio';
+import Search from './components/search';
 
 //Para react navigation bottom
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -30,13 +31,13 @@ export default function App() {
     );
   }
 
-  function Search() {
-    return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Text>Search</Text>
-      </View>
-    );
-  }
+  // function Search() {
+  //   return (
+  //     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+  //       <Text>Search</Text>
+  //     </View>
+  //   );
+  // }
 
   function Account() {
     return (
@@ -100,10 +101,11 @@ export default function App() {
   }
 
   return (
+
     <NavigationContainer>
-      <MyTabs />
+      <MyTabs/>
     </NavigationContainer>
- 
+
   );
 }
 
