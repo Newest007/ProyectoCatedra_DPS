@@ -4,6 +4,8 @@ import { StyleSheet, Text, View } from 'react-native';
 import Login from './components/login';
 import Inicio from './components/Inicio';
 import Search from './components/search';
+import Account from './components/account';
+
 
 //Para react navigation bottom
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -39,13 +41,13 @@ export default function App() {
   //   );
   // }
 
-  function Account() {
-    return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Text>Account</Text>
-      </View>
-    );
-  }
+  // function Account() {
+  //   return (
+  //     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+  //       <Text>Account</Text>
+  //     </View>
+  //   );
+  // }
 
   
   function MyTabs() {
