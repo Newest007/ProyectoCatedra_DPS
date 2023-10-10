@@ -41,6 +41,9 @@ export default function App() {
   //   );
   // }
 
+
+
+  ///////////PASE ACCOUNT A COMPONENTE
   // function Account() {
   //   return (
   //     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
