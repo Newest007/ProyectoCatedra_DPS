@@ -38,7 +38,9 @@ Notion: https://certain-catshark-e3f.notion.site/Proyecto-fase-1-3201d2514b3c47b
 
 Figma: https://www.figma.com/file/BCgRjS1s7vwZC9NybAJcJP/FlyingWell?type=design&node-id=0%3A1&mode=design&t=bvv5OBXYhjpfiZm6-1
 
-================================================================================================================================
+===================================================================================
+
+
 #SEGUNDA_FASE_DEL_PROYECTO
 
 INTEGRANTES
