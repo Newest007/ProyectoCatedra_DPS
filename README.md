@@ -24,11 +24,11 @@ Para compilar correctamente el codigo:
 
 
 Autores
--> Adilson Arian Montes Martinez      MM200149
--> Anderson Melendez Alvarado         MA201409
--> Jocelyn Susana Aguilar Corvera     AC180847
--> Emmanuel Antonio Girón Cornejo     GC180313
--> Daniel Rodríguez Santacruz         RS172168
+→Adilson Arian Montes Martinez      MM200149
+→Anderson Melendez Alvarado         MA201409
+→Jocelyn Susana Aguilar Corvera     AC180847
+→Emmanuel Antonio Girón Cornejo     GC180313
+→Daniel Rodríguez Santacruz         RS172168
 
 Licencia para el código de la herramienta y documentacion de la herramienta
 -> >Atribución-NoComercial-CompartirIgual (CC BY-NC-SA)
@@ -38,5 +38,26 @@ Notion: https://certain-catshark-e3f.notion.site/Proyecto-fase-1-3201d2514b3c47b
 
 Figma: https://www.figma.com/file/BCgRjS1s7vwZC9NybAJcJP/FlyingWell?type=design&node-id=0%3A1&mode=design&t=bvv5OBXYhjpfiZm6-1
 
+================================================================================================================================
+#SEGUNDA_FASE_DEL_PROYECTO
 
-  
+INTEGRANTES
+→Adilson Arian Montes Martinez      MM200149   G01T
+→Anderson Melendez Alvarado         MA201409   G02T
+→Jocelyn Susana Aguilar Corvera     AC180847   G02T
+→Emmanuel Antonio Girón Cornejo     GC180313   G02T
+→Daniel Rodríguez Santacruz         RS172168   G02T
+
+Link (Manual Tecnico): https://www.canva.com/design/DAFv76N2O3A/NzIDiOizt4K1MUqGkwcUcg/edit
+
+Link (Manual de Usuario): https://www.canva.com/design/DAFxSeZ2Vr0/VlJC_WJKRMH6TXnVUAnkfw/edit
+
+Link (Notion): https://certain-catshark-e3f.notion.site/Dise-o-y-Programaci-n-de-Software-Multiplataforma-DPS104-G02T-Proyecto-de-c-tedra-3201d2514b3c47b59569eb764fc9eb60
+
+Link (Mock-Ups): https://www.figma.com/file/BCgRjS1s7vwZC9NybAJcJP/FlyingWell?type=design&node-id=0%3A1&mode=design&t=bvv5OBXYhjpfiZm6-1
+
+Licencia para el código de la herramienta y documentacion de la herramienta
+-> >Atribución-NoComercial-CompartirIgual (CC BY-NC-SA)
+
+Link (Video Demo): https://acortar.link/0JA66O
+
