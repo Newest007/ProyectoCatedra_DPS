@@ -6,7 +6,9 @@
     "start": "webpack-dev-server --mode development",
     "android": "expo run:android",
     "ios": "expo run:ios",
-    "web": "expo start --web"
+    "web": "expo start --web",
+    "build": "babel src -d lib",
+    "test": "jest"
   },
   "dependencies": {
     "@react-navigation/bottom-tabs": "^6.5.9",
@@ -24,5 +26,8 @@
   "devDependencies": {
     "@babel/core": "^7.20.0"
   },
-  "private": true
+  "private": true,
+  "repository": "https://github.com/Newest007/ProyectoCatedra_DPS.git",
+  "author": "Ander503 <andersonmelendez73@gmail.com>",
+  "license": "MIT"
 }
