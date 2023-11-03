@@ -10,13 +10,14 @@ import { NavigationContainer } from '@react-navigation/native';
 import FontAwesomeIcons from 'react-native-vector-icons/FontAwesome';
 
 import ModalExample from './components/Modal';
+import Prueba_api from './components/Prueba_api';
 
 export default function App() {
 
  
   return (
 
-    <ModalExample/>
+    <Prueba_api />
 
   );
 }
